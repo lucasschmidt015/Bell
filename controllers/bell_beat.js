@@ -1,4 +1,8 @@
 
+exports.getBellBeats = (req, res, next) => {
+
+}
+
 exports.getBellBeat = (req, res, next) => {
 
 }

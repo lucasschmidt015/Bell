@@ -2,7 +2,11 @@ exports.listReasons = (req, res, next) => {
 
 }
 
-exports.newReason = (req, res, next) => {
+exports.getNewReason = (req, res, next) => {
+
+}
+
+exports.postNewReason = (req, res, next) => {
 
 }
 

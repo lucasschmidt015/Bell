@@ -6,7 +6,9 @@ const router = express.Router();
 
 router.get('/list_reasons', reasonController.listReasons);
 
-router.post('/new_reason', reasonController.newReason);
+router.get('/new_reason', reasonController.getNewReason);
+
+router.post('/new_reason', reasonController.postNewReason);
 
 router.get('/edit_reason', reasonController.getEditReason);
 
