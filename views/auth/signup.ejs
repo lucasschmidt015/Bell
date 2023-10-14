@@ -5,9 +5,10 @@
 <body>
     <%- include('../includes/navigation.ejs') %>
     <form class="login_form" action="/signup" method="POST">
-        <input type="email" placeholder="Type your E-mail">
-        <input type="password" placeholder="Type your password">
-        <input type="password" placeholder="Confirm your password">
+        <input type="email" name="email" placeholder="Type your E-mail">
+        <input type="password" name="password" placeholder="Type your password">
+        <input type="password" name="confirmPassword" placeholder="Confirm your password">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
         <button type="submit">Login</button>
     </form>
 
