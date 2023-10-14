@@ -28,8 +28,13 @@
     cursor: pointer;
 }
 
-.main-header_item:last-child{
+.one_end_item {
     margin-left: calc(100% - 120px - 120px - 120px - 155px);
+}
+
+.two_end_item {
+    margin-left: calc(100% - 140px - 140px - 140px - 300px);
+    display: flex;
 }
 
 .main-header_item a:hover,

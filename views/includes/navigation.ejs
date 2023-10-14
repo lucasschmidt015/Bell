@@ -11,7 +11,18 @@
     <div class="main-header_item">
         <a href="/list_reasons" class="<%= path === '/motivos' ? 'active' : '' %>">Reasons</a>
     </div>
-    <div class="main-header_item">
-        <a href="/login"s class="<%= path === '/login' ? 'active' : '' %>">Login</a>
-    </div>
+    <% if (isAuth) { %>
+        <div class="main-header_item one_end_item">
+            <a href="/signout"s class="<%= path === '/signout' ? 'active' : '' %>">Signout</a>
+        </div>
+    <% } else { %>
+        <div class="two_end_item">
+            <div class="main-header_item">
+                <a href="/login"s class="<%= path === '/login' ? 'active' : '' %>">Login</a>
+            </div>
+            <div class="main-header_item">
+                <a href="/signup"s class="<%= path === '/signup' ? 'active' : '' %>">SignUp</a>
+            </div>
+        </div>
+    <% } %>
 </header>
