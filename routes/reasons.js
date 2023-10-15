@@ -10,7 +10,7 @@ router.get('/new_reason', reasonController.getNewReason);
 
 router.post('/new_reason', reasonController.postNewReason);
 
-router.get('/edit_reason', reasonController.getEditReason);
+router.post('/call_edit_reason', reasonController.callEditReason);
 
 router.post('/edit_reason', reasonController.postEditReason);
 

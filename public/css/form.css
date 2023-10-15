@@ -1,4 +1,4 @@
-.login_form {
+.central_form {
     height: 300px;
     width: 300px;
     background-color: rgb(221, 221, 221);
@@ -11,7 +11,7 @@
     margin-top: 150px;
 }
 
-.login_form input {
+.central_form input {
     width: 250px;
     height: 25px;
     border: none;
@@ -20,7 +20,7 @@
 }
 
 
-.login_form button { 
+.central_form button { 
     width: 265px;
     height: 35px;
     border: none;
@@ -35,6 +35,6 @@
     cursor: pointer;
 }
 
-.login_form button:hover {
+.central_form button:hover {
     background-color: #27c1fdc9;
 }

@@ -1,0 +1,48 @@
+.table_container {
+    width: 100%;
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_table {
+    background-color: #f1f1f1;
+    width: 90%;
+    height: 90%;
+}
+
+.main_table tr {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.main_table tr:first-child {
+    background-color: #878888
+}
+
+.main_table th {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.main_table td { 
+    text-align: left;
+    padding-left: 15px;
+}
+
+.buttons_conteiner {
+    display: flex;
+    justify-content: space-around;
+}
+
+.table_btn {
+    width: 55px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

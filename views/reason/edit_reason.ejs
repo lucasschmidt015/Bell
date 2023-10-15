@@ -1,0 +1,15 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <form class="central_form" action="/edit_reason" method="POST">
+        <input type="text" name="reason_name" placeholder="Type the reason" value="<%= reason.name %>">
+        <input type="text" name="songUrl" placeholder="Type the song URL" value="<%= reason.songUrl %>">
+        <input type="hidden" name="_id" value="<%= reason._id %>">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button type="submit">Submit</button>
+    </form>
+
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,37 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/table.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <div class="table_container">
+        <table class="main_table">
+            <tr>
+                <th style="width: 31%;">Name</th>
+                <th style="width: 38%;">Song URL</th>
+                <th style="width: 8%; text-align: center;margin-left: 349px;">#</th>
+            </tr>
+            <% for (let reason of reasons) { %>
+                <tr>
+                    <td style="width: 31%;" ><%= reason.name %></td>
+                    <td style="width: 38%;" ><%= reason.songUrl %></td>
+                    <td style="width: 8%; margin-left: 349px;">
+                        <div class="buttons_conteiner">
+                            <form action="/call_edit_reason" method="POST">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <input type="hidden" name="reason_id" value="<%= reason._id %>">
+                                <button style="color: #FFF; background-color: blue;" class="table_btn" type="submit">Editar</button>
+                            </form>
+                            <form action="/delete_reason" method="POST">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <input type="hidden" name="reason_id" value="<%= reason._id %>">
+                                <button style="color: #FFF; background-color: red;" class="table_btn" type="submit">Excluir</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+
+<%- include('../includes/end.ejs') %>
