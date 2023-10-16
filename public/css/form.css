@@ -38,3 +38,11 @@
 .central_form button:hover {
     background-color: #27c1fdc9;
 }
+
+.central_form select {
+    width: 264px;
+    height: 43px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}

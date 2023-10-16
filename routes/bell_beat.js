@@ -10,8 +10,10 @@ router.post('/bell_beat', bellBeatController.postBellBeat);
 
 router.get('/bell_beats', bellBeatController.getBellBeats);
 
-router.get('/edit_bell_beat', bellBeatController.getEditBellBeat);
+router.post('/call_edit_bell_beat', bellBeatController.getEditBellBeat);
 
 router.post('/edit_bell_beat', bellBeatController.postEditBellBeat);
+
+router.post('/delete_bell_beat', bellBeatController.postDeleteBellBeat);
 
 module.exports = router;
