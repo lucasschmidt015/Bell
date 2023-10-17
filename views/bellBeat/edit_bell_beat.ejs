@@ -1,0 +1,24 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <form class="central_form" action="/edit_bell_beat" method="POST">
+        <select name="reason" value="<%= bellBeat.reasonId %>">
+            <option value="123">Select a reason</option>
+            <% for (reason of reasons) { %>
+                <% if (reason._id.toString() === bellBeat.reasonId.toString()) { %>
+                    <option value="<%= reason._id %>" selected><%= reason.name %></option>
+                <% } else { %>
+                    <option value="<%= reason._id %>"><%= reason.name %></option>
+                <% } %>
+            <% } %>
+        </select>
+        <input type="text" name="description" placeholder="Type a description" value="<%= bellBeat.description %>">
+        <input type="hidden" name="bellBeatId" value="<%= bellBeat._id %>">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button type="submit">Edit</button>
+    </form>
+
+<%- include('../includes/end.ejs') %>

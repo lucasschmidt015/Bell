@@ -34,7 +34,6 @@ exports.postBellBeat = (req, res, next) => {
         const newBellBeat = new BellBeat({
             reasonId: reasonId,
             description: description,
-            userId: req.user
         })
         newBellBeat.save()
          .then(success => {
@@ -44,14 +43,47 @@ exports.postBellBeat = (req, res, next) => {
     }
 }
 
-exports.getEditBellBeat = (req, res, next) => {
+exports.callEditBellBeat = (req, res, next) => {
+    const bellBeatId = req.body.bell_beat_id;
 
+    Reason.find()
+     .then(reasonsDoc => {
+        BellBeat.findById(bellBeatId)
+        .then(bellBeatDoc => {
+            res.render('bellBeat/edit_bell_beat', {
+                pageTitle: 'edit_bell_beat',
+                path: '/new_bell_beat',
+                bellBeat: bellBeatDoc,
+                reasons: reasonsDoc
+            })
+        })
+     })
+     .catch(err => console.log(err));
 }
 
 exports.postEditBellBeat = (req, res, next) => {
+    const bellBeatId = req.body.bellBeatId;
+    const newReasonId = req.body.reason;
+    const newDescription = req.body.description;
 
+    BellBeat.findById(bellBeatId)
+     .then(bellBeatDoc => {
+        bellBeatDoc.reasonId = newReasonId;
+        bellBeatDoc.description = newDescription;
+        return bellBeatDoc.save();
+     })
+     .then(success => {
+        res.redirect('/bell_beats');
+     })
+     .catch(err => console.log(err));
 }
 
 exports.postDeleteBellBeat = (req, res, next) => {
+    const bellBeatId = req.body.bell_beat_id;
 
+    BellBeat.findByIdAndRemove(bellBeatId)
+     .then(success => {
+        res.redirect('/bell_beats');
+     })
+     .catch(err => console.log(err));
 }

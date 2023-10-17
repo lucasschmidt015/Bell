@@ -10,7 +10,7 @@ router.post('/bell_beat', bellBeatController.postBellBeat);
 
 router.get('/bell_beats', bellBeatController.getBellBeats);
 
-router.post('/call_edit_bell_beat', bellBeatController.getEditBellBeat);
+router.post('/call_edit_bell_beat', bellBeatController.callEditBellBeat);
 
 router.post('/edit_bell_beat', bellBeatController.postEditBellBeat);
 
